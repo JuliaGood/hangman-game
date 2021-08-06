@@ -89,7 +89,10 @@ class Hangman extends Component {
             ? this.generateButtons()
             : 'You lose!'
         }</p>
-        <button onClick={this.resetWord}>Reset</button>
+        <button 
+          onClick={this.resetWord}
+          id='Hangman-reset'
+        >Reset</button>
       </div>
     );
   }
