@@ -7,6 +7,7 @@ import img3 from "./img/3.jpg";
 import img4 from "./img/4.jpg";
 import img5 from "./img/5.jpg";
 import img6 from "./img/6.jpg";
+import { randomWord } from './words';
 
 class Hangman extends Component {
   /** by default, allow 6 guesses and use provided gallows images. */
@@ -20,7 +21,7 @@ class Hangman extends Component {
     this.state = { 
       nWrong: 0, // nobody guessed anything wrong yet
       guessed: new Set(), // collection of the letters that have been guessed = we store here the letters that have been guessed
-      answer: "apple" 
+      answer: randomWord(), 
     };
     this.handleGuess = this.handleGuess.bind(this);
   }
@@ -63,7 +64,7 @@ class Hangman extends Component {
   /** render: render game */
   render() {
     const isGameOver = this.state.nWrong < this.props.maxWrong;
-    const altText = `${this.state.nWrong}/${this.props.maxWrong}`
+    const altText = `${this.state.nWrong}/${this.props.maxWrong}`;
     return (
       <div className='Hangman'>
         <h1>Hangman game</h1>
