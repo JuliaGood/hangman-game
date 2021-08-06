@@ -62,20 +62,21 @@ class Hangman extends Component {
 
   /** render: render game */
   render() {
+    let isGameOver = this.state.nWrong < this.props.maxWrong;
     return (
       <div className='Hangman'>
         <h1>Hangman game</h1>
         <img src={this.props.images[this.state.nWrong]} />
         <p className='Hangman-wrong'>Incorrect guesses are: {this.state.nWrong}/6</p>
         <p className='Hangman-word'>{
-          this.state.nWrong < this.props.maxWrong
+          isGameOver
           ? this.guessedWord()
           : this.state.answer
         }</p>
         <p className='Hangman-btns'>{
-          this.state.nWrong < this.props.maxWrong
+            isGameOver
             ? this.generateButtons()
-            : `You lose: ${this.state.answer}`
+            : 'You lose!'
         }</p>
       </div>
     );
