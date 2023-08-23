@@ -1,6 +1,7 @@
 {
   "name": "hangman-game",
   "version": "0.1.0",
+  "homepage": "/hangman-game/",
   "private": true,
   "dependencies": {
     "react": "^16.4.1",
