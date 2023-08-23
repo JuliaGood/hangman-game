@@ -7,5 +7,6 @@ body {
   background: url("./img/blue-wall.jpg");
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
+  height: 100%;
 }
